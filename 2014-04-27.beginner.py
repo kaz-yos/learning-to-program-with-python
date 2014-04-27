@@ -53,3 +53,66 @@ type(str(20))
 
 ## evaluation starts inside  first
 str(3 * 4 + 1)
+
+
+
+###
+### Comparisons
+
+4 < 5
+str(4 < 5)
+
+## spacing encouraged
+2 == 2
+
+
+## strings
+"H" == "h"
+"g " == "g"
+
+
+###
+### print()
+print("hello!")
+
+## no quote
+print(5)
+
+
+###
+### input() function for taking information from the user
+## this asks for 
+## a = input("What's your name? ")
+
+
+###
+### Conditionals
+if 3 < 7:
+    print("hi!")
+
+## Reverse conversin
+int("5")
+
+
+
+###
+### example program: ATM
+## Create variables
+user_pin = 5544
+user_balance = 500
+
+## define an ATM
+pin_attempt = input("enter your PIN ")
+pin_attempt = int(pin_attempt)  # convert to int
+
+if pin_attempt == user_pin:
+    amount_to_withdraw = int(input("How much would youlike to withdraw? "))
+    if amount_to_withdraw <= user_balance:
+        print("Disbursing " + str(amount_to_withdraw))
+        print("Remaining balance: " + str(user_balance))
+    else:
+        print(Insufficient funds.)
+else:
+    print("Invalid PIN.")
+
+print("Transaction concluded.")
