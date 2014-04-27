@@ -109,9 +109,9 @@ if pin_attempt == user_pin:
     amount_to_withdraw = int(input("How much would youlike to withdraw? "))
     if amount_to_withdraw <= user_balance:
         print("Disbursing " + str(amount_to_withdraw))
-        print("Remaining balance: " + str(user_balance))
+        print("Remaining balance: " + str(user_balance - amount_to_withdraw))
     else:
-        print(Insufficient funds.)
+        print("Insufficient funds.")
 else:
     print("Invalid PIN.")
 
