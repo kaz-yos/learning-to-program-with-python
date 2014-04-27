@@ -105,3 +105,73 @@ myList
 
 ###
 ### for loop
+
+for elt in myList:
+    print(elt)
+
+## range
+range(30)
+list(range(30))
+
+for elt in list(range(30)):
+    print(elt)
+
+for elt in range(5,15):
+    print(elt)
+
+## contains?
+23 in myList
+"c" in "line"
+"ca" in "carcinoma"
+
+## 
+"piranha".index("pir")
+## first match only
+"piranha".index("a")
+
+m = "piranha"
+m[-1]
+m[-2]
+m[1:2]
+
+## strings are immutable, no partial assignment.
+m[1:2] = 3
+
+## Function
+x = [3, 4, "moose"]
+sum(x)
+
+## length
+len(x)
+
+## Function
+x = [4, 3, -2, 7]
+sorted(x)
+x
+x.sort()
+x
+x.reverse()
+x
+reversed(x)
+list(reversed(x))
+x.sort()
+
+### 
+### functions
+
+def name_of_func(args,arg1):
+    ## body of function
+    pass        # do nothing
+
+## add function
+def add(a,b):
+    return a + b
+
+add(4,-3)
+
+def capitalize(some_string):
+    result = some_string[0].upper()
+    result += some_string[1:]
+    return result
+
+capitalize("kazuki")
