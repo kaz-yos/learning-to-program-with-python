@@ -170,8 +170,20 @@ def add(a,b):
 add(4,-3)
 
 def capitalize(some_string):
-    result = some_string[0].upper()
+    result = some_string[0].upper()     # method
     result += some_string[1:]
     return result
 
 capitalize("kazuki")
+
+
+
+###
+### None is returned by functions by default
+out = print("hello")
+print(out)
+
+
+###
+### Roman numeral conversion
+
