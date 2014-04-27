@@ -187,3 +187,31 @@ print(out)
 ###
 ### Roman numeral conversion
 
+def numeral(number):
+    if type(number) != int or number <= 0:
+        print("Roman numerals undefined")
+        return
+    if number > 1999:
+        print("Unsupported")
+        return
+    ## 
+    result = ""
+    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    numerals = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
+    ## 
+    for n in range(len(values)):
+        while number >= values[n]:
+            ## subtract the number
+            number -= values[n]
+            ## concatenate
+            result += numerals[n]
+    ## 
+    assert number == 0, "There's something left over" # debug
+    return result
+
+
+numeral(0)
+numeral(1)
+numeral(3)
+numeral(14)
+numeral(150)
