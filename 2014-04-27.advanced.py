@@ -65,3 +65,43 @@ else:
     print("Invalid PIN")
     
 print("Transaction concluded.")
+
+
+"""kazuki
+comment
+commment"""
+
+
+n = 0
+while n < 10:
+    print(n)
+    n += 1    
+
+
+###
+### List and OOP
+myList = []
+myList
+type(myList)
+
+myList.append(5)
+myList
+myList.append(30)
+myList
+
+myList.clear()
+myList
+
+myList = [1, 2, 7, 2, 3,
+          76, 23, 2 ,0 ,-3
+          -5]
+myList[0]
+myList[5]
+myList[15]      # no such element
+
+myList.sort()
+myList
+
+
+###
+### for loop
