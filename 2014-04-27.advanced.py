@@ -209,7 +209,7 @@ def numeral(number):
     assert number == 0, "There's something left over" # debug
     return result
 
-
+## test
 numeral(0)
 numeral(1)
 numeral(3)
