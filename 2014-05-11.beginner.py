@@ -66,7 +66,7 @@ while n < len(m):
 
 
 
-## 1 
+## 1
 m = [1,23,6,0.1]
 result_list = []
 n = 0
@@ -101,3 +101,77 @@ type(4) == int
 
 
 ## problem 3
+m = [1,2,3,4,5,6]
+m[::-1] # reverse slicing
+n = len(m) - 1
+m_rev = []
+while not n < 0:
+    m_rev.append(m[n])
+    print(m[n])
+    n = n - 1
+m_rev
+
+
+## string
+m = ["hello","catastrophic","north","salami","bison","east","tmesis","west","bifurcate","south"]
+m
+
+n = 0
+while n < len(m):
+    if m[n] in ["north","south","east","west"]:
+        m[n] = "[CENSORED]"
+    n = n + 1
+print(m)
+
+
+
+## problem 5
+5 % 6
+## integer division
+24 // 10
+
+s1 = [4,87,2,6,44,17]
+s2 = [98,77,6,13,14]
+result_list = []
+
+n = 0
+while n < len(s1):
+    if s1[n] % 2 == 0:
+        result_list.append(s1[n])
+    n = n + 1
+    
+n = 0
+while n < len(s2):
+    if s2[n] % 2 == 0:
+        result_list.append(s2[n])
+    n = n + 1
+
+result_list
+
+
+## smarter
+s3 = s1 + s2
+n = 0
+result_list = []
+while n < len(s3):
+    if s3[n] % 2 == 0:
+        result_list.append(s3[n])
+    n = n + 1
+result_list
+
+## by list comprehension
+[x for x in s1 if x % 2 == 0] + [x for x in s2 if x%2 == 0]
+
+
+## problem 6
+wordA = input("Give me a word. ")
+wordB = input("Give me another word. ")
+
+result = wordA
+
+if len(wordA + wordB) >= 30:
+    result += '.' * (30 - len(wordA))
+else:
+    result += '.' * (30 - len(wordA + wordB))
+    result += wordB
+print(result)
