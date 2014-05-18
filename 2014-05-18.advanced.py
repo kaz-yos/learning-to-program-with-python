@@ -61,10 +61,28 @@ class Person:
         self.name = name # attributes
         self.age  = age
         self.profession = profession
+        ## 
     def shout_name(self):
         print("MY NAME IS " + self.name.upper() + "!!!")
+        ## 
+    def is_a_teenager(self):
+        return 12 < self.age < 20
 
 bill = Person()
 bill.add_info("William Worthington III", 32, "pilot")
 bill.profession
 bill.shout_name()
+
+bill.is_a_teenager()
+
+## 
+class Person:
+    ## Python instanciate using __init__ method automatically.
+    def __init__(self, name, age):
+        self.name = name # attributes
+        self.age  = age
+
+        
+sam = Person("Samantha", 17)
+sam.name
+sam.age
