@@ -138,4 +138,23 @@ accounts[input_PIN]
 
 
 ### sets
+s = {1,2,3,3}
+## no duplication
+s
+
+## string
+miss = set("mississippi")
+miss
+
+a = {1,2,3}
+b = {2,3,4}
+## in both
+a & b
+## in either
+a|b
+## xor (exclusive or)
+a ^ b
+## difference
+a - b
+b - a
 
