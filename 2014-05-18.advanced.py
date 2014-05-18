@@ -82,7 +82,41 @@ class Person:
         self.name = name # attributes
         self.age  = age
 
+## default
+class Person:
+    ## Python instanciate using __init__ method automatically.
+    def __init__(self, name = "Default", age = 0):
+        self.name = name # attributes
+        self.age  = age
+
         
 sam = Person("Samantha", 17)
 sam.name
 sam.age
+
+sam2 = Person()
+sam2.name
+sam2.age
+
+
+
+## one more example
+
+class Rectangle:
+    def __init__(self, w, h):
+        self.width     = w
+        self.height    = h
+        self.area      = w * h
+        self.perimeter = 2 * (w + h)
+    def is_square(self):
+        return self.width == self.height
+
+
+m = Rectangle(3,4)
+n = Rectangle(7,7)
+rec_list = []
+rec_list.append(m)
+rec_list.append(n)
+rec_list[0].is_square()
+rec_list[1].is_square()
+    
