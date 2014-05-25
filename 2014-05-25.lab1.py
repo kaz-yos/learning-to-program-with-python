@@ -298,3 +298,8 @@ def my_filter(fun, lt):
 def even(x):
     return x%2 == 0
 my_filter(even, test_list)
+
+## list comprehension
+def my_filter(fun, lt):
+    return [x for x in lt if fun(x)]
+my_filter(even, test_list)
