@@ -44,10 +44,15 @@ birth_date_obj = datetime.datetime.strptime(my_ymd, date_fmt)
 delta_date_in_days = current_date_obj - birth_date_obj
 
 ## Tell in years
-before_or_after_md = (int(time.strftime("%m")) * 100 + int(time.strftime("%d"))) - (my_month * 100 + my_day)
 year_difference = int(time.strftime("%Y")) - my_year
+## datetime object for the birthday this year
+birth_day_this_year = time.strftime("%Y") + "-" + str_my_month + "-" + str_my_day
+birth_day_this_year_obj = datetime.datetime.strptime(birth_day_this_year, date_fmt)
+## datetime object for the current date
+current_date_obj = datetime.datetime.strptime(current_date, date_fmt)
 
-if before_or_after_md >= 0:
+## Compare the current 
+if current_date_obj >= birth_day_this_year_obj:
     print("you are " + str(year_difference) + " years old.")
 else:
     print("you are " + str(year_difference - 1) + " years old.")
