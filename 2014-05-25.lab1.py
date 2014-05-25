@@ -70,6 +70,16 @@ print("you are " + str(int(delta_date_in_days.days)) + " days old")
 
 ### 3.	Ask the user for a number, a mathematical operator, and then another number. Print out the result of the operation. For example, if the user enters  3, *, 4, the program should print 12, which is the value of 3 times 4.
 
+## ask for three things separated by ,
+# http://stackoverflow.com/questions/14444512/how-do-you-create-multiple-variables-from-raw-input-in-python
+user_input = input("Give number a, an operator, and number b separated by ,: ")
+user_input_split = user_input.split(",")
+a = user_input_split[0]
+opr = user_input_split[1]
+b = user_input_split[2]
+ans = eval(a + opr + b)
+print("The ans is " + str(ans))
+
 
 ### 4.	Simulate a conversation by doing the following:
 # a.	Print  a greeting.
@@ -85,3 +95,5 @@ else:
     print("odd")
 
 
+### 
+### Set B    
