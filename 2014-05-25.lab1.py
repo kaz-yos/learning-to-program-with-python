@@ -52,7 +52,14 @@ if before_or_after_md >= 0:
 else:
     print("you are " + str(year_difference - 1) + " years old.")
     
+## Tell in months
+print("you are " + str(int(delta_date_in_days.days / 30)) + " months old")
 
+## Tell in weeks
+print("you are " + str(int(delta_date_in_days.days / 7)) + " weeks old")
+
+## Tell in days
+print("you are " + str(int(delta_date_in_days.days)) + " days old")
 
 
 
