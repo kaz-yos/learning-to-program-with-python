@@ -98,8 +98,8 @@ else:
 ### 
 ### Set B    
 # [uses looping]
-
 ### 1.	Print out the entirety of the lyrics to the song “99 Bottles of Beer on the Wall.”
+## use for after spliting a string at spaces
 
 ### 2.	Create a guess-the-number game. Pick a number, then ask the user for a guess. If their guess is low, tell them “Higher!” and ask for another guess. If their guess is high, tell them “Lower!” and ask for another guess. If their guess is correct, tell them “You got it!” and end the loop.
 
@@ -111,4 +111,41 @@ else:
 # 10 is not a prime number, because it is divisible by 5 and 2.
 # Remember that the modulus operator (%) tells you what’s left over after a division operation. 5 % 2 is 1, because 2 goes into 5 twice with 1 left over.
 
-## # 5.	Iteratively print the first 25 numbers of the Fibonacci sequence. The first two terms are 0 and 1. From there, each successive term is the sum of the two previous terms.
+candidate = range(2, 1000 + 1)
+
+
+### 5.	Iteratively print the first 25 numbers of the Fibonacci sequence. The first two terms are 0 and 1. From there, each successive term is the sum of the two previous terms.
+
+
+
+###
+### Set C:
+# [uses functions, lists, and string methods]
+
+### 1.	Write a recursive function which returns a list containing the first N terms of the Fibonacci sequence. Warning: this is tricky.
+
+### 2.	Create a function which, when run, simulates a console version of Connect 4. The Connect 4 board is a 7x6 grid, best represented as a list of lists, also known as a matrix. The game would run a loop where each iteration is a new turn. This would be time-consuming, but not too tricky.
+
+# Each turn should involve the following:
+# a.	The current state of the Connect 4 grid should be printed out.
+# b.	A message should be printed saying which player’s turn it is.
+# c.	It should then wait for the player to select a column, and place their color square at the lowest unfilled spot of that column.
+# d.	It should then check whether the player has won, and either ask if they want to start a new game, or else proceed to the next turn if the game is not yet over. 
+
+### 3.	Write a recursive implementation of QuickSort.
+
+### 4.	Write a function which takes a paragraph of text (as a string) and returns a new  string with the following changes made:
+
+# a.	All periods changed to exclamation points.
+# b.	All words containing a “q” replaced with “[CENSORED]”
+# c.	All capitalized words prefaced by “Mr.” or “Mrs.”
+
+### 5.	Write out your own versions of the following Python built-ins:
+# a.	max()   #takes a list, returns highest value
+# b.	min()   #takes a list, returns lowest value
+# c.	len()    #takes a list, returns the length of the list
+# d.	sum()  #takes a list, returns sum of values
+# e.	reversed()   #takes a list, returns a reversed list
+# f.	map()  #takes a list and a function and returns a new list constructed by applying the function to each value in the original list
+# g.	filter()  #takes a list and a function and returns a new list constructed by applying the function to each value in the original list to see whether the funciton returns True or False. The new list only contains those values for which the function returned True.
+
