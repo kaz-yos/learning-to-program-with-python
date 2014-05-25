@@ -25,8 +25,13 @@ str_my_day   = ("00" + str(my_day))[-2: ]
 
 my_ymd = str(my_year) + "-" + str_my_month + "-" + str_my_day
 
+## Get current date
 import time
 print(time.strftime("%Y-%m-%d"))
+
+## Date calculation
+# http://stackoverflow.com/questions/151199/how-do-i-calculate-number-of-days-betwen-two-dates-using-python
+
 
 
 # 3.	Ask the user for a number, a mathematical operator, and then another number. Print out the result of the operation. For example, if the user enters  3, *, 4, the program should print 12, which is the value of 3 times 4.
