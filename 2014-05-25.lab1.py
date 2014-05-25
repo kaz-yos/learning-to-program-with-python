@@ -194,6 +194,29 @@ fibonacci_list(25)
 # b.	All words containing a “q” replaced with “[CENSORED]”
 # c.	All capitalized words prefaced by “Mr.” or “Mrs.”
 
+test_string = "Kazuki is working quickly on this problem. Let's see if it works."
+
+## No need for a backslash
+test_string = test_string.replace(".","!")
+
+test_string_list = test_string.split(" ")
+
+def converter(st):
+    if "q" in st:
+        return "[CENSORED]"
+    elif st[0] == st[0].capitalize():
+        return ("Mr. " + st)
+    else:
+        return st
+
+## as a list
+list(map(converter, test_string_list))
+
+## join
+test_string = " ".join(list(map(converter, test_string_list)))
+print(test_string)
+
+
 ### 5.	Write out your own versions of the following Python built-ins:
 # a.	max()   #takes a list, returns highest value
 # b.	min()   #takes a list, returns lowest value
@@ -202,4 +225,12 @@ fibonacci_list(25)
 # e.	reversed()   #takes a list, returns a reversed list
 # f.	map()  #takes a list and a function and returns a new list constructed by applying the function to each value in the original list
 # g.	filter()  #takes a list and a function and returns a new list constructed by applying the function to each value in the original list to see whether the funciton returns True or False. The new list only contains those values for which the function returned True.
+
+
+
+
+
+
+
+
 
