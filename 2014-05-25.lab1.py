@@ -226,11 +226,75 @@ print(test_string)
 # f.	map()  #takes a list and a function and returns a new list constructed by applying the function to each value in the original list
 # g.	filter()  #takes a list and a function and returns a new list constructed by applying the function to each value in the original list to see whether the funciton returns True or False. The new list only contains those values for which the function returned True.
 
+test_list = [1, 2, 3, 3.5, 4, 5, 6, 7]
+## for reduce
+import functools
 
+## max
+def my_max(lt):
+    def my_fun(a,b):
+        if a >= b:
+            return a
+        else:
+            return b
+        ## 
+    return functools.reduce(lambda a, b: my_fun(a,b), lt)
+my_max(test_list)
 
+## min
+def my_min(lt):
+    def my_fun(a,b):
+        if a >= b:
+            return b
+        else:
+            return a
+        ## 
+    return functools.reduce(lambda a, b: my_fun(a,b), lt)
+my_min(test_list)
 
+## len
+def my_len(lt):
+    def my_fun(a,b):
+        return a + 1
+        ## 
+    return functools.reduce(lambda a, b: my_fun(a,b), lt, 0)
+my_len(test_list)
 
+## sum
+def my_sum(lt):
+    def my_fun(a,b):
+        return a + b
+        ## 
+    return functools.reduce(lambda a, b: my_fun(a,b), lt, 0)
+my_sum(test_list)
 
+## reversed
+def my_reversed(lt):
+    def my_fun(a,b):
+        return [b] + a
+        ## 
+    return functools.reduce(lambda a, b: my_fun(a,b), lt, [])
+my_reversed(test_list)
 
+## map
+def my_map(fun, lt):
+    def my_fun(a,b):
+        return a + [fun(b)]
+        ## 
+    return functools.reduce(lambda a, b: my_fun(a,b), lt, [])
+def square(x):
+    return x*x
+my_map(square, test_list)
 
-
+## filter
+def my_filter(fun, lt):
+    def my_fun(a,b):
+        if fun(b) == True:
+            return a + [b]
+        else:
+            return a
+        ## 
+    return functools.reduce(lambda a, b: my_fun(a,b), lt, [])
+def even(x):
+    return x%2 == 0
+my_filter(even, test_list)
