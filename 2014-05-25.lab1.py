@@ -238,7 +238,7 @@ def my_max(lt):
         else:
             return b
         ## 
-    return functools.reduce(lambda a, b: my_fun(a,b), lt)
+    return functools.reduce(my_fun, lt)
 my_max(test_list)
 
 ## min
@@ -249,7 +249,7 @@ def my_min(lt):
         else:
             return a
         ## 
-    return functools.reduce(lambda a, b: my_fun(a,b), lt)
+    return functools.reduce(my_fun, lt)
 my_min(test_list)
 
 ## len
@@ -257,7 +257,7 @@ def my_len(lt):
     def my_fun(a,b):
         return a + 1
         ## 
-    return functools.reduce(lambda a, b: my_fun(a,b), lt, 0)
+    return functools.reduce(my_fun, lt, 0)
 my_len(test_list)
 
 ## sum
@@ -265,7 +265,7 @@ def my_sum(lt):
     def my_fun(a,b):
         return a + b
         ## 
-    return functools.reduce(lambda a, b: my_fun(a,b), lt, 0)
+    return functools.reduce(my_fun, lt, 0)
 my_sum(test_list)
 
 ## reversed
@@ -273,7 +273,7 @@ def my_reversed(lt):
     def my_fun(a,b):
         return [b] + a
         ## 
-    return functools.reduce(lambda a, b: my_fun(a,b), lt, [])
+    return functools.reduce(my_fun, lt, [])
 my_reversed(test_list)
 
 ## map
@@ -281,7 +281,7 @@ def my_map(fun, lt):
     def my_fun(a,b):
         return a + [fun(b)]
         ## 
-    return functools.reduce(lambda a, b: my_fun(a,b), lt, [])
+    return functools.reduce(my_fun, lt, [])
 def square(x):
     return x*x
 my_map(square, test_list)
@@ -294,7 +294,7 @@ def my_filter(fun, lt):
         else:
             return a
         ## 
-    return functools.reduce(lambda a, b: my_fun(a,b), lt, [])
+    return functools.reduce(my_fun, lt, [])
 def even(x):
     return x%2 == 0
 my_filter(even, test_list)
