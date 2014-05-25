@@ -97,3 +97,18 @@ else:
 
 ### 
 ### Set B    
+# [uses looping]
+
+### 1.	Print out the entirety of the lyrics to the song “99 Bottles of Beer on the Wall.”
+
+### 2.	Create a guess-the-number game. Pick a number, then ask the user for a guess. If their guess is low, tell them “Higher!” and ask for another guess. If their guess is high, tell them “Lower!” and ask for another guess. If their guess is correct, tell them “You got it!” and end the loop.
+
+### 3.	Without looking, replicate what I did in class and print out a triangle of X’s, then a diamond. 
+
+### 4.	Find all prime numbers lower than 1000.
+# A prime number is a number that cannot be evenly divided by anything besides itself and 1.
+# 11 is a prime number, as is 5, 3, 2, 17, etc.
+# 10 is not a prime number, because it is divisible by 5 and 2.
+# Remember that the modulus operator (%) tells you what’s left over after a division operation. 5 % 2 is 1, because 2 goes into 5 twice with 1 left over.
+
+## # 5.	Iteratively print the first 25 numbers of the Fibonacci sequence. The first two terms are 0 and 1. From there, each successive term is the sum of the two previous terms.
