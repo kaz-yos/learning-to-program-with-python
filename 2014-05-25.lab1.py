@@ -51,12 +51,12 @@ birth_day_this_year_obj = datetime.datetime.strptime(birth_day_this_year, date_f
 ## datetime object for the current date
 current_date_obj = datetime.datetime.strptime(current_date, date_fmt)
 
-## Compare the current 
+## Compare the current
 if current_date_obj >= birth_day_this_year_obj:
     print("you are " + str(year_difference) + " years old.")
 else:
     print("you are " + str(year_difference - 1) + " years old.")
-    
+
 ## Tell in months
 print("you are " + str(int(delta_date_in_days.days / 30)) + " months old")
 
@@ -95,15 +95,15 @@ else:
     print("odd")
 
 
-### 
-### Set B    
+###
+### Set B
 # [uses looping]
 ### 1.	Print out the entirety of the lyrics to the song “99 Bottles of Beer on the Wall.”
 ## use for after spliting a string at spaces
 
 ### 2.	Create a guess-the-number game. Pick a number, then ask the user for a guess. If their guess is low, tell them “Higher!” and ask for another guess. If their guess is high, tell them “Lower!” and ask for another guess. If their guess is correct, tell them “You got it!” and end the loop.
 
-### 3.	Without looking, replicate what I did in class and print out a triangle of X’s, then a diamond. 
+### 3.	Without looking, replicate what I did in class and print out a triangle of X’s, then a diamond.
 
 ### 4.	Find all prime numbers lower than 1000.
 # A prime number is a number that cannot be evenly divided by anything besides itself and 1.
@@ -111,11 +111,53 @@ else:
 # 10 is not a prime number, because it is divisible by 5 and 2.
 # Remember that the modulus operator (%) tells you what’s left over after a division operation. 5 % 2 is 1, because 2 goes into 5 twice with 1 left over.
 
-candidate = range(2, 1000 + 1)
+candidates = range(2, 1000 + 1)
+
+## just print them all
+for i in candidates:
+    print(str(i))
+
+## for and print solution
+for i in candidates:
+    ## Create a list of values lower than i
+    divisor_candidates = filter(lambda x: x < i, candidates)
+    ## Keep ones with reminder zero
+    good_divisors      = filter(lambda x: (i % x) == 0, divisor_candidates)
+    ## if nothing left, a prime
+    if len(list(good_divisors)) == 0:
+        print(str(i) + " is a prime.")
+
+
+## More functional solution
+def is_prime(x):
+    divisor_candidates = range(2,x)
+    good_divisors      = filter(lambda y: (x % y) == 0, divisor_candidates)
+    return len(list(good_divisors)) == 0
+is_prime(2)
+is_prime(3)
+is_prime(4)
+## Filter elements in candidates, using the is_prime(x) function
+list(filter(lambda x: is_prime(x), candidates))
+
 
 
 ### 5.	Iteratively print the first 25 numbers of the Fibonacci sequence. The first two terms are 0 and 1. From there, each successive term is the sum of the two previous terms.
 
+## Recursive function
+def fib(x):
+    if x == 0:
+        return 0
+    elif x == 1:
+        return 1
+    else:
+        return fib(x-1) + fib(x-2)
+
+## Function to print
+def fibonacci_print(x):
+    for i in map(fib, range(0,x)):
+        print(i)
+
+fibonacci_print(25)
 
 
 ###
@@ -124,15 +166,27 @@ candidate = range(2, 1000 + 1)
 
 ### 1.	Write a recursive function which returns a list containing the first N terms of the Fibonacci sequence. Warning: this is tricky.
 
+## Function to print
+def fibonacci_list(x):
+    return list(map(fib, range(0,x)))
+
+fibonacci_list(1)
+fibonacci_list(25)
+
+
+
 ### 2.	Create a function which, when run, simulates a console version of Connect 4. The Connect 4 board is a 7x6 grid, best represented as a list of lists, also known as a matrix. The game would run a loop where each iteration is a new turn. This would be time-consuming, but not too tricky.
 
 # Each turn should involve the following:
 # a.	The current state of the Connect 4 grid should be printed out.
 # b.	A message should be printed saying which player’s turn it is.
 # c.	It should then wait for the player to select a column, and place their color square at the lowest unfilled spot of that column.
-# d.	It should then check whether the player has won, and either ask if they want to start a new game, or else proceed to the next turn if the game is not yet over. 
+# d.	It should then check whether the player has won, and either ask if they want to start a new game, or else proceed to the next turn if the game is not yet over.
+
+
 
 ### 3.	Write a recursive implementation of QuickSort.
+
 
 ### 4.	Write a function which takes a paragraph of text (as a string) and returns a new  string with the following changes made:
 
