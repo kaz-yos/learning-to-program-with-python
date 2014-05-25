@@ -16,11 +16,14 @@ else:
 
 
 # 2.	Ask the user for their birthday by asking for the year, then the month number, then the day number. Tell them how old they are in years, then how old they are in months, then how old they are in weeks, then in days. If they give you an invalid birthday, do not crash.
-my_year = int(input("What is your birth year in four digitis: "))
+my_year  = int(input("What is your birth year in four digitis: "))
 my_month = int(input("What is your birth month in number: "))
-my_day = int(input("What is your birth day number: "))
+my_day   = int(input("What is your birth day number: "))
 
-my-ymd = str(my_year, my_month, my_day)
+str_my_month = ("00" + str(my_month))[-2: ]
+str_my_day   = ("00" + str(my_day))[-2: ]
+
+my_ymd = str(my_year) + "-" + str_my_month + "-" + str_my_day
 
 import time
 print(time.strftime("%Y-%m-%d"))
