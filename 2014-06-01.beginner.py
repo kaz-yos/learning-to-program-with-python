@@ -23,4 +23,18 @@ len("\n")
 len("\\")
 len("\\n") # regular n
 
-removeWhitespace("Kauki Yoshida")
+print(removeWhitespace("Kauki Yoshida is at a Python meetup."))
+
+
+def printTriangle(base=50):
+    m = 1
+    while base >= 0:
+        space = ' '*int(base/2)
+        Xs = 'X' * m
+        print(space + Xs + space)
+        base -= 2
+        m += 2
+
+printTriangle()
+printTriangle(30)
+
