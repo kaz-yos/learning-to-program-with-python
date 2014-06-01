@@ -9,7 +9,17 @@ class Card:
         self.value = value
         self.suit = suit
     def __str__(self):
-        return str(self.value) + " of " + self.suit
+        if self.value == 14:
+            val = "Ace"
+        elif self.value == 13:
+            val = "King"
+        elif self.value == 12:
+            val = "Queen"
+        elif self.value == 11:
+            val = "Jack"
+        else:
+            val = str(self.value)
+        return val + " of " + self.suit
 
 ### Deck class
 class Deck:
@@ -53,7 +63,9 @@ class WarEngine:
         while self.p1_deck.cards and self.p2_deck.cards:
             c1 = self.p1_deck.draw()
             c2 = self.p2_deck.draw()
-            print("P1: " + str(c1.value) +  " of " + c1.suit, "P2: " + str(c2.value) + " of " + c2.suit)
+            # print("P1: " + str(c1.value) +  " of " + c1.suit, "P2: " + str(c2.value) + " of " + c2.suit)
+            print("P1: " + str(c1), "P2: " + str(c2))
+            ## wagered handling
             wagered = Deck([c1,c2])
             while c1.value == c2.value:
                 print("WAR!")
@@ -67,6 +79,7 @@ class WarEngine:
                 wagered.addCardBottom(c1)
                 wagered.addCardBottom(c2)
                 print("P1: " + str(c1.value) +  " of " + c1.suit, "P2: " + str(c2.value) + " of " + c2.suit)
+            ## Non equal cards
             if c1.value > c2.value:
                 for c in wagered.cards:
                     self.p1_deck.addCardBottom(c)
@@ -77,7 +90,8 @@ class WarEngine:
             print("P2 has", len(self.p2_deck.cards))
             #input("Press enter to begin the next round.")
             print()
-        ## at the game end
+        ## at the game end print it
+        ##                       # ternary expression
         print("The winner is " + ("p1" if self.p1_deck.cards else "p2"))
 
 ### Create a game engine instance
