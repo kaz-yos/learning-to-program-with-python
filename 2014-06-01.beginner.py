@@ -38,3 +38,19 @@ def printTriangle(base=50):
 printTriangle()
 printTriangle(30)
 
+
+## outside first
+def printMessageNTimes(message, n):
+    if n > 0:
+        print(message, n)
+        printMessageNTimes(message, n-1)
+
+printMessageNTimes("test", 5)
+
+## inside first, printing 0 too
+def printMessageNTimes(message, n):
+    if n > 0:        
+        printMessageNTimes(message, n-1)
+    print(message, n)
+
+printMessageNTimes("test", 5)
