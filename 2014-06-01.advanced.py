@@ -48,6 +48,8 @@ class Deck:
         self.cards.append(card)    # end is the top
     def addCardBottom(self, card):
         self.cards = [card] + self.cards #
+    def __len__(self):
+        return len(self.cards)
 
 ### WarEngine class (abstract)
 class WarEngine:
@@ -70,9 +72,10 @@ class WarEngine:
             while c1.value == c2.value:
                 print("WAR!")
                 for n in range(3):
-                    if len(self.p1_deck.cards) > 1:
+                    ## __len__ defined for Deck class
+                    if len(self.p1_deck) > 1:
                         wagered.addCardBottom(self.p1_deck.draw())
-                    if len(self.p2_deck.cards) > 1:
+                    if len(self.p2_deck) > 1:
                         wagered.addCardBottom(self.p2_deck.draw())
                 c1 = self.p1_deck.draw()
                 c2 = self.p2_deck.draw()
