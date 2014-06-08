@@ -17,13 +17,29 @@ class Monster(object):
 
 ## Inheritance
 class Banshee(Monster):
-    pass
+    ## Overwrite the default __init__j
+    def __init__(self):
+        ## Monster's __init__ method is invoked
+        super().__init__()
+        ## Override these values
+        self.attack       = 25
+        self.defense      = 10
+        self.accuracy     = 1
+        self.magic_resist = 0.0
+        self.volume       = 50
+
+class Dragon(Monster):
+    def __init__(self):
+        super().__init__()
+        self.attack  = 200
+        self.defense = 200
+        self.health  = 1000
 
 
-## 
-barry = Monster()
-george = Banshee()
-
+##
+m = Monster()
+b = Banshee()
+d = Dragon()
 
 ## george is an instance of Banshee of course
 isinstance(george, Banshee)
