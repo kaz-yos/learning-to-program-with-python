@@ -8,5 +8,5 @@ def capitalizeWords(string):
     words = string.split()
     result = []
     for w in words:
-        resutl.append(w.title())
-    return " ".join.result
+        result.append(w.title())
+    return " ".join(result)
