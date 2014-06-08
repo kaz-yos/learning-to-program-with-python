@@ -9,13 +9,13 @@ pi = 3.14
 def add(x,y):
     return x + y
 
+number = 5
+age = 10
+rate = 15
 
-
-
-
-
-
-
-
-
-
+def capitalizeWords(string):
+    words = string.split()
+    result = []
+    for w in words:
+        resutl.append(w.title())
+    return " ".join.result
