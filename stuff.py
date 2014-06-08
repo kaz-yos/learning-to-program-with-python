@@ -1,3 +1,6 @@
+## Message
+print("This stuff module just started executing")
+
 ## Define variables
 number = 5
 age    = 10
@@ -10,3 +13,6 @@ def capitalizeWords(string):
     for w in words:
         result.append(w.title())
     return " ".join(result)
+
+## Message
+print("This stuff module just finished executing")
